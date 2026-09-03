@@ -66,7 +66,7 @@ Place the overlay button in a `ZStack` above your content:
 
 ```swift
 import SwiftUI
-import HeliosLiveChat
+import HeliosLiveChatCore
 
 struct ContentView: View {
     var body: some View {
@@ -78,29 +78,18 @@ struct ContentView: View {
 }
 ```
 
-For a fixed button in the bottom-trailing corner, use `LiveChatWidget`:
-
-```swift
-ZStack {
-    MyHomeView()
-    LiveChatWidget(config: LiveChatConfig(id: "your-widget-id"))
-}
-```
-
 ### UIKit
 
 Add the draggable overlay on top of your content:
 
 ```swift
-import HeliosLiveChatIOS
+import HeliosLiveChatCore
 
 let overlay = LiveChatOverlayButtonView(config: LiveChatConfig(id: "your-widget-id"))
 overlay.frame = view.bounds
 overlay.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 view.addSubview(overlay)
 ```
-
-Or use `LiveChatWidgetView` for a fixed corner button.
 
 ## Configuration
 
