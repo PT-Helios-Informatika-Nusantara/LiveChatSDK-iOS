@@ -1,0 +1,55 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.3.3 (swiftlang-6.3.3.1.3 clang-2100.1.1.101)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 6 -O -enable-experimental-feature DebugDescriptionMacro -module-name HeliosLiveChatCore -package-name helioslivechatcore
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.3.3
+import Foundation/*.Bundle*/
+import Foundation/*.ProcessInfo*/
+import Foundation/*.URL*/
+import Swift
+import SwiftUI
+import UIKit
+import WebKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import _WebKit_SwiftUI
+public struct LiveChatConfig : Swift.Sendable {
+  public let id: Swift.String
+  public let bottomMargin: CoreFoundation.CGFloat
+  public let trailingMargin: CoreFoundation.CGFloat
+  public let fabSize: CoreFoundation.CGFloat
+  public let fabColor: SwiftUICore.Color
+  public let fabIconColor: SwiftUICore.Color
+  public let fabIcon: SwiftUICore.Image?
+  public init(id: Swift.String, bottomMargin: CoreFoundation.CGFloat = 24, trailingMargin: CoreFoundation.CGFloat = 24, fabSize: CoreFoundation.CGFloat = 60, fabColor: SwiftUICore.Color = LiveChatConfig.defaultButtonColor, fabIconColor: SwiftUICore.Color = .white, fabIcon: SwiftUICore.Image? = nil)
+  public static let defaultButtonColor: SwiftUICore.Color
+  public var fullURL: Foundation.URL {
+    get
+  }
+}
+@_Concurrency.MainActor @preconcurrency public struct LiveChatOverlayButton : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(config: HeliosLiveChatCore.LiveChatConfig)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s18HeliosLiveChatCore0bC13OverlayButtonV4bodyQrvp", 0) __
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency final public class LiveChatOverlayButtonView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency public init(config: HeliosLiveChatCore.LiveChatConfig)
+  @_Concurrency.MainActor @preconcurrency @objc override final public func hitTest(_ point: CoreFoundation.CGPoint, with event: UIKit.UIEvent?) -> UIKit.UIView?
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency final public class LiveChatWidgetView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency public init(config: HeliosLiveChatCore.LiveChatConfig)
+  @_Concurrency.MainActor @preconcurrency @objc override final public func hitTest(_ point: CoreFoundation.CGPoint, with event: UIKit.UIEvent?) -> UIKit.UIView?
+  @objc deinit
+}
+@_Concurrency.MainActor @preconcurrency public struct LiveChatWidget : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(config: HeliosLiveChatCore.LiveChatConfig)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s18HeliosLiveChatCore0bC6WidgetV4bodyQrvp", 0) __
+}
+extension HeliosLiveChatCore.LiveChatOverlayButton : Swift.Sendable {}
+extension HeliosLiveChatCore.LiveChatWidget : Swift.Sendable {}
