@@ -29,14 +29,14 @@ In Xcode: **File → Add Package Dependencies…** and enter:
 https://github.com/singgihrama11/ios-native-sdk.git
 ```
 
-Choose a version rule (e.g. **Up to Next Major Version** from `1.0.0`) and add
+Choose a version rule (e.g. **Up to Next Major Version** from `1.0.1`) and add
 the **HeliosLiveChat** product to your app target.
 
 ### Package.swift
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/singgihrama11/HeliosLiveChatIOS.git", from: "1.0.0")
+    .package(url: "https://github.com/singgihrama11/HeliosLiveChatIOS.git", from: "1.0.1")
 ],
 targets: [
     .target(name: "YourApp", dependencies: ["HeliosLiveChatIOS"])
