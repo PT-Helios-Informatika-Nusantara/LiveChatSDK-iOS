@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.1
+
+- Hide some function.
+
 ## 1.2.0
 
 - Added access token support for authentication
