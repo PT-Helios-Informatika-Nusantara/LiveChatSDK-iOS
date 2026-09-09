@@ -10,7 +10,6 @@ button, and UIKit wrappers — mirroring the Helios Flutter and Android SDKs.
   dragged near the screen border, collapsing into a side tab.
 - **Anchored button** — a fixed floating button pinned to the bottom-trailing
   corner.
-- **SwiftUI & UIKit** — first-class APIs for both.
 
 ## Requirements
 
@@ -29,14 +28,14 @@ In Xcode: **File → Add Package Dependencies…** and enter:
 https://github.com/singgihrama11/ios-native-sdk.git
 ```
 
-Choose a version rule (e.g. **Up to Next Major Version** from `1.1.0`) and add
+Choose a version rule (e.g. **Up to Next Major Version** from `1.2.0`) and add
 the **HeliosLiveChat** product to your app target.
 
 ### Package.swift
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/singgihrama11/HeliosLiveChatIOS.git", from: "1.1.0")
+    .package(url: "https://github.com/singgihrama11/HeliosLiveChatIOS.git", from: "1.2.0")
 ],
 targets: [
     .target(name: "YourApp", dependencies: ["HeliosLiveChatIOS"])
@@ -60,7 +59,7 @@ a permission is requested without its description:
 
 ## Usage
 
-### SwiftUI
+### Overlay Button
 
 Place the overlay button in a `ZStack` above your content:
 
@@ -78,17 +77,22 @@ struct ContentView: View {
 }
 ```
 
-### UIKit
-
-Add the draggable overlay on top of your content:
+### Token Authentication
+Token can get from Kouventa Live Chat Portal.
 
 ```swift
+import SwiftUI
 import HeliosLiveChatCore
 
-let overlay = LiveChatOverlayButtonView(config: LiveChatConfig(id: "your-widget-id"))
-overlay.frame = view.bounds
-overlay.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-view.addSubview(overlay)
+// Login
+Button("Login"){
+  HeliosLivechat.setMemberToken("your-token")
+}
+
+//Logout
+Button("Logout"){
+  HeliosLivechat.clearMemberToken()
+}
 ```
 
 ## Configuration

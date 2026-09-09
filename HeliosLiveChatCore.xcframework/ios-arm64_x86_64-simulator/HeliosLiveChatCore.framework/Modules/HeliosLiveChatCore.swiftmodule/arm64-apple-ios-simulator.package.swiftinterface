@@ -21,8 +21,7 @@ public struct LiveChatConfig : Swift.Sendable {
   public let bottomMargin: CoreFoundation.CGFloat
   public let trailingMargin: CoreFoundation.CGFloat
   public let fabSize: CoreFoundation.CGFloat
-  public let verbose: Swift.Bool
-  public init(id: Swift.String, bottomMargin: CoreFoundation.CGFloat = 24, trailingMargin: CoreFoundation.CGFloat = 24, fabSize: CoreFoundation.CGFloat = 60, verbose: Swift.Bool = false)
+  public init(id: Swift.String, bottomMargin: CoreFoundation.CGFloat = 24, trailingMargin: CoreFoundation.CGFloat = 24, fabSize: CoreFoundation.CGFloat = 60)
   public static let defaultButtonColor: SwiftUICore.Color
   public var fullURL: Foundation.URL {
     get
@@ -40,17 +39,8 @@ public struct LiveChatConfig : Swift.Sendable {
   @_Concurrency.MainActor @preconcurrency @objc override final public func hitTest(_ point: CoreFoundation.CGPoint, with event: UIKit.UIEvent?) -> UIKit.UIView?
   @objc deinit
 }
-@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency final public class LiveChatWidgetView : UIKit.UIView {
-  @_Concurrency.MainActor @preconcurrency public init(config: HeliosLiveChatCore.LiveChatConfig)
-  @_Concurrency.MainActor @preconcurrency @objc override final public func hitTest(_ point: CoreFoundation.CGPoint, with event: UIKit.UIEvent?) -> UIKit.UIView?
-  @objc deinit
-}
-@_Concurrency.MainActor @preconcurrency public struct LiveChatWidget : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(config: HeliosLiveChatCore.LiveChatConfig)
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s18HeliosLiveChatCore0bC6WidgetV4bodyQrvp", 0) __
+public enum HeliosLivechat {
+  public static func setMemberToken(_ token: Swift.String?)
+  public static func clearMemberToken()
 }
 extension HeliosLiveChatCore.LiveChatOverlayButton : Swift.Sendable {}
-extension HeliosLiveChatCore.LiveChatWidget : Swift.Sendable {}

@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.0
+
+- Added access token support for authentication
+
 ## 1.1.0
 
 - Added customable widget button (custom from portal live chat)
