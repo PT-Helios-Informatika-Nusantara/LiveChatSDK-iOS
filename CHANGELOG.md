@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.2
+
+- Fix sign out function.
+
 ## 1.2.1
 
 - Hide some function.
