@@ -15,8 +15,8 @@ button, and UIKit wrappers — mirroring the Helios Flutter and Android SDKs.
 
 | Platform | Support   |
 |----------|-----------|
-| iOS      | ✅ 13.0+  |
-| iPadOS   | ✅ 13.0+  |
+| iOS      | ✅ 18.0+  |
+| iPadOS   | ✅ 18.0+  |
 
 ## Installation
 
@@ -35,7 +35,7 @@ the **HeliosLiveChat** product to your app target.
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/singgihrama11/HeliosLiveChatIOS.git", from: "1.2.2")
+    .package(url: "https://github.com/singgihrama11/HeliosLiveChatIOS.git", from: "1.3.0")
 ],
 targets: [
     .target(name: "YourApp", dependencies: ["HeliosLiveChatIOS"])
@@ -106,4 +106,4 @@ Button("Logout"){
 
 ## License
 
-[MIT](LICENSE)
+[EULA](LICENSE)
