@@ -1,4 +1,4 @@
-# HeliosLiveChat
+# LiveChatSDK - iOS
 
 A native iOS SDK that embeds the Helios live chat widget into your app via
 `WKWebView`. It provides a draggable floating chat button, a corner-anchored
@@ -25,20 +25,20 @@ button, and UIKit wrappers — mirroring the Helios Flutter and Android SDKs.
 In Xcode: **File → Add Package Dependencies…** and enter:
 
 ```
-https://github.com/singgihrama11/ios-native-sdk.git
+https://github.com/PT-Helios-Informatika-Nusantara/LiveChatSDK-iOS.git
 ```
 
-Choose a version rule (e.g. **Up to Next Major Version** from `1.2.2`) and add
-the **HeliosLiveChat** product to your app target.
+Choose a version rule (e.g. **Up to Next Major Version** from `1.3.1`) and add
+the **LiveChatSDKiOS** product to your app target.
 
 ### Package.swift
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/singgihrama11/HeliosLiveChatIOS.git", from: "1.3.0")
+    .package(url: "https://github.com/PT-Helios-Informatika-Nusantara/LiveChatSDK-iOS.git", from: "1.3.1")
 ],
 targets: [
-    .target(name: "YourApp", dependencies: ["HeliosLiveChatIOS"])
+    .target(name: "YourApp", dependencies: ["LiveChatSDKiOS"])
 ]
 ```
 
@@ -65,7 +65,7 @@ Place the overlay button in a `ZStack` above your content:
 
 ```swift
 import SwiftUI
-import HeliosLiveChatCore
+import LiveChatSDKCore
 
 struct ContentView: View {
     var body: some View {
@@ -77,12 +77,27 @@ struct ContentView: View {
 }
 ```
 
-### Token Authentication
-Token can get from Kouventa Live Chat Portal.
+## Authentication Type
+
+This library supports 3 authentication methods:
+### 1. Email & Password:
+Require members to log in with credentials before chatting.
+##### Flow: 
+Uses the exact same integration as described in the [Usage](#usage) section. No additional SDK configuration or code setup is required; the SDK automatically handles the login flow inside the default widget.
+### 2. Guest Mode:
+Collect a name and email without requiring authentication.
+##### Flow:
+Uses the exact same integration as described in the [Usage](#usage) section. No additional SDK configuration or code setup is required; the SDK automatically handles the login flow inside the default widget.
+### 3. Token Authentication
+##### Flow:
+1. Enable **Token** as an authentication method in the Portal.
+2. Get the API key from the Portal.
+3. Set up your backend as required by the Portal (see the setup steps in the Portal).
+4. Call the following code:
 
 ```swift
 import SwiftUI
-import HeliosLiveChatCore
+import LiveChatSDKCore
 
 // Login
 Button("Login"){

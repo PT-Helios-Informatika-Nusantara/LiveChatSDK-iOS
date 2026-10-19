@@ -4,21 +4,21 @@
 import PackageDescription
 
 let package = Package(
-    name: "Helios-LiveChat-IOS",
+    name: "LiveChatSDKiOS",
     platforms: [
-        .iOS(.v13)
+        .iOS(.v18)
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "Helios-LiveChat-IOS",
-            targets: ["HeliosLiveChatCore"]
+            name: "LiveChatSDKiOS",
+            targets: ["LiveChatSDKCore"]
         ),
     ],
     targets: [
             .binaryTarget(
-                name: "HeliosLiveChatCore",
-                path: "HeliosLiveChatCore.xcframework"
+                name: "LiveChatSDKCore",
+                path: "LiveChatSDKCore.xcframework"
             ),
         ]
 )

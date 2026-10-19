@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.1
+- Rename module
+- Fixed minimum OS
+
+
 ## 1.3.0
 - Fix ipad adaptive layout error.
 - Fix overlay button drag and drop sticky.
@@ -8,6 +13,7 @@
 - Fix access token mode cannot open.
 - Fix user unread issue.
 - Update minimum IOS to 18.0
+
 ## 1.2.2
 - Fix sign out function.
 
