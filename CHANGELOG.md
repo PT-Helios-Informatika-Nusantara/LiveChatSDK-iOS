@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.3.2
+- Fix border widget overflow
+
 ## 1.3.1
 - Rename module
 - Fixed minimum OS
